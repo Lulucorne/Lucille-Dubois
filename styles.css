@@ -191,6 +191,100 @@ html {
     display: none;
   }
 }
+/* =========================================
+   TRADUCTION SNOWFLAKE ICON
+========================================= */
+.lang-float {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  z-index: 9999;
+}
+
+.lang-float a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+  background: transparent;
+  text-decoration: none;
+
+  opacity: 0.25;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.lang-float a:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Snowflake image */
+.snowflake-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px var(--color-glow-alt)) drop-shadow(0 0 12px var(--color-glow-main));
+  pointer-events: none;
+}
+
+/* Tooltip bubble */
+.lang-float a::before {
+  content: 'EN/FR';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  transform: translateY(-100%);
+
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+
+  background: var(--color-bg-inner);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: 0 0 12px var(--color-black);
+
+  font-family: var(--font-monospace);
+  font-size: 13px;
+  color: var(--color-text-main);
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Tooltip arrow */
+.lang-float a::after {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: 18px;
+
+  width: 0;
+  height: 0;
+
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid var(--color-bg-inner);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.lang-float a:hover::before,
+.lang-float a:hover::after {
+  opacity: 1;
+}
 
 /* =========================================
    LAYOUT: PROFILE + MUSIC
