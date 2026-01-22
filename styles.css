@@ -326,6 +326,24 @@ html {
   padding-bottom: 5px;
 }
 
+.profile-pic {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-pic:hover {
+  border-color: var(--color-accent-light);
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 1),
+    0 0 14px var(--color-glow-alt),
+    0 0 26px var(--color-glow-main);
+  filter: contrast(125%) grayscale(20%);
+  transform: scale(1.02);
+}
+
 /* =========================================
    MUSIC PLAYER
 ========================================= */
